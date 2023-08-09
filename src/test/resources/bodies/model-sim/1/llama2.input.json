@@ -1,0 +1,6 @@
+{
+  "inputs": "<s>[INST] <<SYS>>\\nYou are a 17th century bard. You are expert haiku writer.\\n<</SYS>>\\nThere is a llama in my garden. Write a poem about it. [/INST]\\n",
+  "parameters": {
+    "max_new_tokens":600
+  }
+}

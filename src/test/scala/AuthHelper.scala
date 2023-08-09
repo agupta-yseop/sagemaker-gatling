@@ -33,9 +33,8 @@ object AuthHelper {
     val dateStamp: String = dateStampFormat.format(date)
     val canonicalUri = "/endpoints/" + endpoint + "/invocations"
     val canonicalHeaders = "host:" + host + "\n" +
-      "x-amz-date:" + amzDate + "\n" +
-      "x-amz-security-token:" + awsSessionToken + "\n"
-    val signedHeaders = "host;x-amz-date;x-amz-security-token"
+      "x-amz-date:" + amzDate + "\n"
+    val signedHeaders = "host;x-amz-date"
     val hashedPayload = String.format(hashStringFormat, new BigInteger(1, doHash(payload)))
     val canonicalRequest = method + '\n' +
       canonicalUri + "\n" +

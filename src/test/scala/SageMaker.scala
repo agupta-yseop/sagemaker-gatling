@@ -82,10 +82,9 @@ class SageMaker(requestFilePath: String = null,
       .exec(
         http("SageMaker-" + endpoint) // TODO: Add file weight name here?
           .post(url)
-          .header("Content-Type", "plain/text")
+          .header("Content-Type", "application/json")
           .header("Authorization", "${authorizationHeader}")
           .header("X-Amz-Date", "${amzDate}")
-          .header("X-Amz-Security-Token", awsSessionToken)
           .header("tid", "${tid}")
           .body(StringBody(
             session => session.attributes.get("nextRequest").mkString
